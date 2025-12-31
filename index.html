@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy New Year</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            overflow: hidden;
+            color: white;
+        }
+
+        /* Glass container */
+        .container {
+            padding: 60px 80px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.15);
+        }
+
+        /* Snip animation text */
+        .snip-text {
+            font-size: 64px;
+            line-height: 1.2;
+            overflow: hidden;
+        }
+
+        .snip-text span {
+            display: block;
+            transform: translateX(-130%) skewX(-20deg);
+            animation: snipReveal 1.4s ease forwards;
+        }
+
+        .snip-text span:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes snipReveal {
+            0% {
+                transform: translateX(-130%) skewX(-20deg);
+                opacity: 0;
+            }
+            60% {
+                transform: translateX(10%) skewX(6deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(0) skewX(0);
+            }
+        }
+
+        /* Subtitle */
+        .sub-text {
+            margin-top: 25px;
+            font-size: 18px;
+            opacity: 0;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: 1.8s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .snip-text {
+                font-size: 42px;
+            }
+
+            .container {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="snip-text">
+            <span>Happy New Year</span>
+        </h1>
+
+        <p class="sub-text">
+            From T.S Karate School
+        </p>
+    </div>
+
+</body>
+</html>
